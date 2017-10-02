@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+
+
+function magic_multiply(x, y){
+    
+      if(x instanceof Array){
+        for(let i=0; i<x.length; i++){
+          x[i] = x[i]*y;
+        }
+        return x;
+      }
+      
+      else if(typeof y === "string"){
+        return "Error: Cannot multiply by string";
+      }
+
+      else if(typeof x === "string" && typeof y === "number"){
+        var z = "";
+        for(var i = 0; i<y; i++){
+             z += x;        
+        }
+        return z;
+        
+      }
+      else{
+        z = x*y;
+        return z;
+  
+      }
+  
+  }
+let test1 = magic_multiply(5,2);
+console.log(test1);
+
+let test2 = magic_multiply(0, 0);
+console.log(test2);
+// => "All inputs 0"
+
+let test3 = magic_multiply([1, 2, 3], 2);
+console.log(test3);
+// => [2, 4, 6]
+
+
+
+
+</script>
+<body>
+
+    
+</body>
+</html>
