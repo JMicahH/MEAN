@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+function starString(number, character="*"){ // define arguments with default
+    var stars = ""; //define string for return
+    for(var i=1; i<=number; i++){
+        stars += character; // add character to string based on loop runs
+    }
+    return stars; // return string of stars
+}
+
+function drawStars(array){
+    for(var i = 0; i < array.length; i ++){
+        if(typeof array[i] == "number"){ //if value at index is integer
+          console.log(starString(array[i]));
+        }
+        else if(typeof array[i] == "string"){ // if value at index is a string
+          var number = array[i].length; // determine string length
+          var character = array[i][0].toLowerCase(); // grab first character of string
+          console.log(starString(number, character))
+        }
+    }
+}
+
+
+
+</script>
+<body>
+    
+</body>
+</html>
