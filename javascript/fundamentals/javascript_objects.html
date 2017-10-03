@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+    let students = [{
+            name: 'Remy',
+            cohort: 'Jan'
+        },
+        {
+            name: 'Genevieve',
+            cohort: 'March'
+        },
+        {
+            name: 'Chuck',
+            cohort: 'Jan'
+        },
+        {
+            name: 'Osmund',
+            cohort: 'June'
+        },
+        {
+            name: 'Nikki',
+            cohort: 'June'
+        },
+        {
+            name: 'Boris',
+            cohort: 'June'
+        }
+    ];
+
+    function studentlist() {
+        for (let student in students) {
+            console.log("Name:", students[student].name, ", Cohort:", students[student].cohort);
+        }
+    }
+    studentlist();
+    
+
+    // Challenge 2
+    let users = {
+        employees: [
+            {'first_name':  'Miguel', 'last_name' : 'Jones'},
+            {'first_name' : 'Ernie', 'last_name' : 'Bertson'},
+            {'first_name' : 'Nora', 'last_name' : 'Lu'},
+            {'first_name' : 'Sally', 'last_name' : 'Barkyoumb'}
+        ],
+        managers: [
+           {'first_name' : 'Lillian', 'last_name' : 'Chambers'},
+           {'first_name' : 'Gordon', 'last_name' : 'Poe'}
+        ]
+     };
+    
+    function staff(){
+        var number = 1;
+        console.log("EMPLOYEES");
+        for(let i in users.employees){
+          let namelength = users.employees[i].first_name.length + users.employees[i].last_name.length;
+          console.log(number + "  -  " + users.employees[i].last_name + ", " + users.employees[i].first_name + "  -  " + namelength);
+          number++;
+          }
+        console.log("MANAGERS");
+        number = 1;
+        for(let i in users.managers){
+          let namelength = users.managers[i].first_name.length + users.managers[i].last_name.length;
+          console.log(number + "  -  " + users.managers[i].last_name + ", " + users.managers[i].first_name + "  -  " + namelength);
+          number++;
+          }
+    }
+    
+    staff();
+
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>
