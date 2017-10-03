@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<script>
+    function Ninja(name, health = 100) {
+        var self = this;
+        this.name = name;
+        this.health = health;
+        var speed = 3;
+        var strength = 3;
+
+        this.sayName = function () {
+            console.log("NAME:", name);
+        }
+
+        this.showStats = function () {
+            console.log("HEALTH:", health, " STRENGTH:", strength, " SPEED:", speed);
+        }
+
+        this.drinkSake = function () {
+            self.health += 10;
+        }
+
+        this.punch = function (thing) {
+            if (thing instanceof Ninja) {
+
+                thing.health -= 5;
+                console.log(name + " punched " + thing.name + " and now " + thing.name + "'s health is " + thing.health);
+            } else {
+                console.log("NOT INSTANCE of Ninja");
+            }
+
+
+        }
+
+        this.kick = function (thing) {
+            if (thing instanceof Ninja) {
+                thing.health -= (strength * 15);
+                console.log(thing.name + " was kicked by " + name + " and lost " + (strength * 15) + " health.");
+            } else {
+                console.log("NOT INSTANCE of Ninja");
+            }
+
+        }
+
+    }
+
+
+    var ninja1 = new Ninja("Hyabusa");
+    ninja1.sayName();
+    // -> "My ninja name is Hyabusa!"
+    ninja1.showStats();
+    // -> "Name: Hayabusa, Health: 100, Speed: 3, Strength: 3"
+
+
+    var blue_ninja = new Ninja("Goemon");
+    var red_ninja = new Ninja("Bill Gates");
+    red_ninja.punch(blue_ninja);
+    blue_ninja.kick(red_ninja);
+</script>
+
+<body>
+
+</body>
+
+</html>
