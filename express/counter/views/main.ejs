@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Node Express: Counter</title>
+</head>
+<body>
+
+    <h2>Counter</h2>
+
+    <h6><%= session %>  times</h6>
+
+    <form action="/plus2" method="GET">
+        <input type="submit" value="+2 Counter">
+        </form>
+
+        
+    <form action="/reset" method="GET">
+    <input type="submit" value="Reset Counter">
+    </form>
+</body>
+</html>
