@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Quoting Dojo: Quotes</title>
+</head>
+<body>
+
+    <h1>Here are the awesome quotes!</h1>
+
+    <% for(var x in quotes) {%>
+        <h4>"<%= quotes[x].quote %>"</h4>
+            <p style="text-indent: 25px;">–<%= quotes[x].name %> at <%= quotes[x].created_at.toTimeString() %></p>
+        
+        <hr>
+        <% } %>
+
+        <a href="/"><button>Return Home</button></a>
+</body>
+</html>
