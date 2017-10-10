@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chicken Dashboard</title>
+</head>
+<body>
+    
+
+    <h1>Welcome to the Chicken Dashboard</h1>
+<p>
+        <% if(typeof(errors) != 'undefined' ) { %>
+            <% for (var x in errors) { %>
+             <h3><%= errors[x].messages %></h3>
+            <% } %>
+        <% } %>
+</p>
+
+<p>
+        <% if(chickens.length > 0 ) { %>
+            <% for (var chicken in chickens) { %>
+                <p><b>Name:</b> <%= chickens[chicken].name %><br>
+                    <b>Feathers Color:</b> <%= chickens[chicken].feathers %><br>
+                    <b>Clucks Given:</b> <%= chickens[chicken].clucks_given %></p>
+                <% } %>
+        <% } %>
+
+</p>
+
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chicken Dashboard</title>
+</head>
+<body>
+    
+
+    <h1>Welcome to the Chicken Dashboard: Edit a Chicken</h1>
+
+<h4>You've requested Chicken with ID: <%= chickens[0].id %></h4>
+
+
+                    <form action="/update/<%= chickens[0]._id %>" method="POST">
+                        <label>Chicken's Name: <input type="text" name="name" value="<%= chickens[0].name %>"></label><br>
+                        <label>Feathers: <select name="feathers" value="<%= chickens[0].feathers %>">
+                                <option value="Brown">Brown</option>
+                                <option value="Red">Red</option>
+                                <option value="White">White</option>
+                            </select></label><br>
+                        <label>Clucks Given: <input type="number" name="clucks" min="0" max="742" value="<%= chickens[0].clucks_given %>"></label><br>
+                            
+                        <input type="submit" name="Update Chicken">
+                        
+                        </form>
+                
+
+
+
+
+</body>
+</html>

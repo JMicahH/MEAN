@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chicken Dashboard: Add New Chicken</title>
+</head>
+<body>
+    
+
+    <h3>Welcome to the Chicken Dashboard: Add a Chicken</h3>
+
+
+    <form action="/addchicken" method="POST">
+        <label>Chicken's Name: <input type="text" name="name"></label><br>
+        <label>Feathers: <select name="feathers">
+                <option value="Brown">Brown</option>
+                <option value="Red">Red</option>
+                <option value="White">White</option>
+            </select></label><br>
+        <label>Clucks Given: <input type="number" name="clucks" min="0" max="742"></label><br>
+            
+        <input type="submit" name="Add Chicken">
+        
+        </form>
+        
+
+</body>
+</html>
