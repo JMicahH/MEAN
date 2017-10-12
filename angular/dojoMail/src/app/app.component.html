@@ -1,0 +1,25 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div id="inboxContainer">
+  <h1>
+    Dojo Mail
+  </h1>
+  <table id="inbox">
+    <thead>
+      <th>Email</th>
+      <th>Importance</th>
+      <th>Subject</th>
+      <th>Content</th>
+    </thead>
+    <tr *ngFor='let email of emails'>
+      <td> {{ email.sender | lowercase}}</td>
+      <td *ngIf='email.importance'>High</td>
+      <td *ngIf='!email.importance'>Low</td>      
+      <td> {{ email.subject | lowercase }}</td>
+      <td> {{ email.content | lowercase }}</td>
+    </tr>
+
+
+
+  </table>
+</div>
+
