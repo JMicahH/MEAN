@@ -1,0 +1,11 @@
+#wrapper{
+    margin: 40px 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    float: left;
+    display: inline-block;
+}
