@@ -1,0 +1,6 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align:center">
+<h1>Switchboard</h1>
+
+<div *ngFor="let switch of switches; let idx = index" class="switchdiv" [ngClass]='switch.status' (click)="click(switch, idx)">{{ switch.status | uppercase }}</div>
+</div>

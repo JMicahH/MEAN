@@ -1,0 +1,23 @@
+.switchdiv{
+    width: 70px;
+    height: 70px;
+    vertical-align: middle;
+    padding-top: 18px;
+    display: inline-block;
+    margin: 5px;
+    border: 4px dotted black;
+    font-size: 19px;
+    font-weight: bold;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    box-shadow: 1px 1px 2px black;
+}
+
+.on {
+    background-color: green;
+}
+
+.off {
+    background-color: rgb(255, 0, 0);
+}
+
