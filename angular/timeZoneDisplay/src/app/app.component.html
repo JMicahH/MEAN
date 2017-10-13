@@ -1,0 +1,17 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="text-align: center">
+<h1>U.S. Time Zone Display</h1><br>
+
+<button *ngIf="clicked!=='pst'" class="btn-default btn-xlg" (click)='pst()'>PST</button>
+<button *ngIf="clicked=='pst'" class="btn-default btn-xlg selected" (click)='pst()'>PST</button>
+<button *ngIf="clicked!=='mst'" class="btn-default btn-xlg" (click)='mst()'>MST</button>
+<button *ngIf="clicked=='mst'" class="btn-default btn-xlg selected" (click)='mst()'>MST</button>
+<button *ngIf="clicked!=='cst'" class="btn-default btn-xlg" (click)='cst()'>CST</button>
+<button *ngIf="clicked=='cst'" class="btn-default btn-xlg selected" (click)='cst()'>CST</button>
+<button *ngIf="clicked!=='est'" class="btn-default btn-xlg" (click)='est()'>EST</button>
+<button *ngIf="clicked=='est'" class="btn-default btn-xlg selected" (click)='est()'>EST</button>
+<button class="btn-default btn-xlg" (click)='clear()'>Clear</button>
+
+<h2>{{ time }}</h2>
+
+</div>
