@@ -1,0 +1,148 @@
+<div class="container">
+  <h1>Registration Form</h1>
+
+  <div id="registrationBox">
+
+    <form (submit)="onSubmit()" #formData='ngForm' [(ngModel)]="user.regForm">
+      <div class="row">
+        <div class="form-group col-sm-4">
+          <label for='firstName'>First Name:</label>
+          <input type="text" name='firstName' #firstName="ngModel" required minlength="2" maxlength="24" class="form-control" [(ngModel)]='user.firstName' >
+          <span *ngIf="!firstName.valid && firstName.touched" class="validationError">
+            <p *ngIf="!firstName.errors.minlength"> First Name is required</p>
+            <p *ngIf="firstName.errors.minlength">First Name must be at least 2 characters.</p></span>
+          
+          
+          
+        </div>
+        <div class="form-group col-sm-4">
+          <label for='lastName'>Last Name:</label>
+          <input type="text" name='lastName' #lastName="ngModel" required minlength="2" maxlength="24" class="form-control" [(ngModel)]='user.lastName'>
+          <span *ngIf="!lastName.valid && lastName.touched" class="validationError">
+              <p *ngIf="!lastName.errors.minlength"> Last Name is required</p>
+              <p *ngIf="lastName.errors.minlength">Last Name must be at least 2 characters.</p></span>
+                    </div>
+        <div class="form-group col-sm-4">
+          <label for='email'>Email:</label>
+          <input type="email" name='email' #email="ngModel" required email="true" class="form-control" [(ngModel)]='user.email'>
+          <span *ngIf="!email.valid && email.touched" class="validationError">Valid Email is required
+            </span>
+                      </div>
+        </div>
+
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label for='password'>Password:</label>
+          <input type="text" name='password' #password="ngModel" required minlength="6" maxlength="42" pattern="^([a-zA-Z0-9@*#]{8,15})$" class="form-control" [(ngModel)]='user.password'>
+          <span *ngIf="!password.valid && password.touched" class="validationError">
+              <p *ngIf="!password.errors.minlength"> Password is required</p>
+              <p *ngIf="password.errors.minlength">Password must be at least 6 characters</p></span>
+        </div>
+        <div class="form-group col-sm-6">
+          <label for='passwordConf'>Password Confirmation:</label>
+          <input type="text" name='passwordConf' #passwordConf="ngModel" required class="form-control"
+            [(ngModel)]='user.passwordConf'>
+            <span *ngIf="user.passwordConf !== user.password  && passwordConf.touched" class="validationError">Password and Confirmation do not match</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label for='streetAddress'>Street Address:</label>
+          <input type="text" name='streetAddress' #streetAddress="ngModel" required minlength="2" maxlength="42" class="form-control"
+            [(ngModel)]='user.streetAddress'>
+            <span *ngIf="!streetAddress.valid && streetAddress.touched" class="validationError">
+                <p *ngIf="!streetAddress.errors.minlength"> Street Address is required</p>
+                <p *ngIf="streetAddress.errors.minlength">Street Address must be at least 2 characters.</p></span>
+        </div>
+        <div class="form-group col-sm-6">
+          <label for='unitApt'>Unit/Apt #:</label>
+          <input type="text" name='unitApt' #unitApt="ngModel" class="form-control" [(ngModel)]='user.unitApt'>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label for='city'>City:</label>
+          <input type="text" name='city' #city="ngModel" required minlength="2" maxlength="42" class="form-control" [(ngModel)]='user.city'>
+          <span *ngIf="!city.valid && city.touched" class="validationError">City is required</span>
+        </div>
+        <div class="form-group col-sm-6">
+          <label for='state'>State:</label>
+          <select name='state' #state="ngModel" required class="form-control" [(ngModel)]='user.state'>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+            <option value="AR">Arkansas</option>
+            <option value="CA">California</option>
+            <option value="CO">Colorado</option>
+            <option value="CT">Connecticut</option>
+            <option value="DE">Delaware</option>
+            <option value="DC">District Of Columbia</option>
+            <option value="FL">Florida</option>
+            <option value="GA">Georgia</option>
+            <option value="HI">Hawaii</option>
+            <option value="ID">Idaho</option>
+            <option value="IL">Illinois</option>
+            <option value="IN">Indiana</option>
+            <option value="IA">Iowa</option>
+            <option value="KS">Kansas</option>
+            <option value="KY">Kentucky</option>
+            <option value="LA">Louisiana</option>
+            <option value="ME">Maine</option>
+            <option value="MD">Maryland</option>
+            <option value="MA">Massachusetts</option>
+            <option value="MI">Michigan</option>
+            <option value="MN">Minnesota</option>
+            <option value="MS">Mississippi</option>
+            <option value="MO">Missouri</option>
+            <option value="MT">Montana</option>
+            <option value="NE">Nebraska</option>
+            <option value="NV">Nevada</option>
+            <option value="NH">New Hampshire</option>
+            <option value="NJ">New Jersey</option>
+            <option value="NM">New Mexico</option>
+            <option value="NY">New York</option>
+            <option value="NC">North Carolina</option>
+            <option value="ND">North Dakota</option>
+            <option value="OH">Ohio</option>
+            <option value="OK">Oklahoma</option>
+            <option value="OR">Oregon</option>
+            <option value="PA">Pennsylvania</option>
+            <option value="RI">Rhode Island</option>
+            <option value="SC">South Carolina</option>
+            <option value="SD">South Dakota</option>
+            <option value="TN">Tennessee</option>
+            <option value="TX">Texas</option>
+            <option value="UT">Utah</option>
+            <option value="VT">Vermont</option>
+            <option value="VA">Virginia</option>
+            <option value="WA">Washington</option>
+            <option value="WV">West Virginia</option>
+            <option value="WI">Wisconsin</option>
+            <option value="WY">Wyoming</option>
+          </select>
+          <span *ngIf="!state.valid && state.touched" class="validationError">State is required</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="form-group col-sm-6">
+          <label for='feelingLucky'>I'm feeling lucky!</label>
+          &nbsp;Yes&nbsp;<input type="radio" name='feelingLucky' #feelingLucky="ngModel" required value='yes' [(ngModel)]='user.feelingLucky'>
+          &nbsp;No&nbsp;<input type="radio" name='feelingLucky' #feelingLucky="ngModel" required value='no' [(ngModel)]='user.feelingLucky'>
+          <span *ngIf="!feelingLucky.valid && feelingLucky.touched" class="validationError">Feeling Lucky is required
+              </span>
+        </div>
+
+        <div class="col-sm-6">
+          <input *ngIf="!formData.valid" type="submit" class="btn disabled">
+          <input *ngIf="formData.valid" type="submit" class="btn btn-outline-primary">
+          
+        </div>
+      </div>
+
+    </form>
+  </div>
+  Users Array: {{ users | json }}
+</div>
