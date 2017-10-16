@@ -1,6 +1,8 @@
 <div class="container">
   <h1>Registration Form</h1>
 
+  <div id="successMessage" *ngIf="successMessage.length > 1">{{ successMessage }}</div>
+
   <div id="registrationBox">
 
     <form (submit)="onSubmit()" #formData='ngForm' [(ngModel)]="user.regForm">
