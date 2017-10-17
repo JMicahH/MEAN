@@ -1,0 +1,9 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class="container">
+
+    <app-add-quote [allQuotes]="allQuotes" (quoteEmitter)="newQuote($event)"></app-add-quote>
+<br><br><hr>
+    <app-quote-list [allQuotes]="allQuotes" (listEmitter)="updateList($event)"></app-quote-list>
+
+
+</div>

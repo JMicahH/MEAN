@@ -1,0 +1,19 @@
+<h1>Quotes List</h1>
+
+<div *ngFor="let quote of allQuotes; let idx = index" class="row quoteRow">
+  <div class="col-sm-7">
+    <p class="quoteStyle">{{ quote.quoteText }}</p>
+    <p class="authorStyle">— {{ quote.author }}</p>
+    </div>
+
+    <div class="col-sm-2 ratingStyle">{{ quote.rating }}</div>
+
+    <div class="col-sm-2">
+        <button class="btn btn-success" (click)="upVote(quote)">UpVote</button><br>
+        <button class="btn btn-danger"  (click)="downVote(quote)">DownVote</button><br>
+        <button class="btn btn-default"  (click)="deleteQuote(idx)">Delete</button>
+      </div>
+
+
+  </div>
+

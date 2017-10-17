@@ -1,0 +1,24 @@
+.quoteRow{
+    border: 1px solid gray;
+    width: 100%;
+    padding: 20px;
+}
+
+.btn {
+    width: 6.5em !important;
+    margin: 2px;
+}
+
+.quoteStyle{
+}
+
+.authorStyle{
+    font-style: italic;
+}
+
+.ratingStyle{
+    font-size: 80px;
+    font-family: serif;
+    font-weight: bold;
+    color: #999;
+}

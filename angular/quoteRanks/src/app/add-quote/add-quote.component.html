@@ -1,0 +1,43 @@
+<h1>Add a Quote</h1>
+
+<div class="row">
+  <div class="col-6">
+
+    <form (submit)="onSubmit()" #formData='ngForm'>
+      <label for="quoteText">Quote Text</label>
+      <textarea name="quoteText" required #quoteText="ngModel" [(ngModel)]='quote.quoteText' minlength="4" class="form-control"
+        rows="5"></textarea>
+      <br>
+
+      <label for="author">Author</label><br>
+      <input type="text" name="author" required [(ngModel)]='quote.author' #author="ngModel" minlength="1" class="form-control col-8" id="authorField">
+
+      <input *ngIf="!formData.valid" type="submit" class="btn disabled col-3">
+      <input *ngIf="formData.valid" type="submit" class="btn btn-outline-primary col-3">
+
+
+    </form>
+
+
+  </div>
+
+
+  <div class="col-6">
+    <p><span *ngIf="quoteText.errors && quoteText.touched">
+      The quote field is required.
+    </span><br>
+    <span *ngIf="quote.quoteText.length < 4 && quoteText.touched">
+      The quote must contain at least 4 characters.
+    </span></p>
+
+    <p><span *ngIf="author.errors && author.touched">
+        The author field is required.
+      </span><br>
+      <span *ngIf="quote.author.length < 1 && author.touched">
+        The Author must be at least 1 characters.
+      </span></p>
+  
+
+
+  </div>
+</div>
