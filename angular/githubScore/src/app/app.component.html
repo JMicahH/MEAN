@@ -1,0 +1,27 @@
+<div class='container'>
+
+<div class="row">
+<div class="col-sm-6">
+<h1>GitHub Score</h1><br>
+
+<form (submit)="onSubmit()">
+  <label for="username">GitHub Username:</label>
+  <input type="text" class="form-control" required name="username" minlength="2" [(ngModel)]="username" #usernameModel="ngModel"><br>
+  <input type="submit" [disabled]="!usernameModel.valid" class="btn btn-primary">
+  
+</form>
+
+
+</div>
+
+<div class="col-sm-6">
+{{ userScore }}
+
+
+</div>
+
+</div>
+
+
+
+</div>
